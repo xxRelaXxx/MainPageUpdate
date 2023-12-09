@@ -1,0 +1,238 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    font-family: var(--classic-font);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.25em;
+    --main-bg-color: #23235C;
+    --light-violet-color: #3e3ea1;
+    --dark-violet-color: #1c0333;
+    --main-text-color: aliceblue;
+    --classic-font: 'Roboto', sans-serif;
+    --thick-font: 'Bebas Neue', sans-serif;
+    --nav-height: 50px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navigation-box {
+    top: 0;
+    position: sticky;
+    background-color: var(--light-violet-color);
+    height: var(--nav-height);
+}
+
+.navigation-list {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    list-style-type: none;
+}
+
+.navigation-list > li > a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: var(--thick-font);
+    font-size: 1.3em;
+    text-shadow: 0 2px 3px rgb(86, 16, 114);
+    box-shadow: none;
+    color: #7878d1;
+    transition: all 0.4s ease-in-out;
+}
+
+.navigation-list > li > a:hover {
+    color: #0e0e4e;
+    text-shadow: 2px 4px 11px rgb(158, 99, 182);
+    border-radius: 50%;
+    box-shadow: 0 0 100px 3px #7878d1;
+    margin: 0 40px 0 40px;
+}
+
+.introductive-container {
+    position: relative;
+    background: linear-gradient(var(--main-bg-color), var(--dark-violet-color));
+    max-width: 100%;
+    height: 100vh;
+}
+
+.introductive-image {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    background: url('../IMG/cute-nobg-anime-gitl.png') bottom;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    filter: brightness(75%) contrast(130%) saturate(125%);
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    animation: BGtoTheTop 2s ease-in-out 1s forwards;
+    transition: all 0.4s ease-in-out;
+}
+
+.author-initials {
+    left: -2px;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+
+#letter1,
+#letter2,
+#letter3,
+#letter4,
+#letter5 {
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    line-height: 35vw;
+    font-size: 40vw; /* Adjust the font size as needed */
+    background: linear-gradient(to top, #2d2db3c5, #47107acb); /* Adjust colors as needed */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 2;
+    transition: all 0.8s ease;
+    /*border: 1px solid white;*/
+    animation: blinkingBorder infinite ease-in-out 2.5s;
+    animation-delay: 2.4s;
+}
+
+.scroll-down-btn {
+    --down-button-width-height: 50vh;
+    position: absolute;
+    top: calc(50% - var(--down-button-width-height)/2);
+    left: calc(50% - var(--down-button-width-height)/2);
+    width: var(--down-button-width-height);
+    height: var(--down-button-width-height);
+    background-color: rgba(119, 7, 113, 0.444);
+    color: var(--dark-violet-color);
+    border: none;
+    border-radius: 50%;
+    font-size: 4em;
+    border: 4px solid var(--dark-violet-color);
+    cursor: pointer;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out; /* Add a smooth transition for opacity */
+    z-index: 4;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Add a subtle box shadow */
+
+    /* Hover styles */
+    &:hover {
+        background-color: hsl(261deg 80% 48%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    }
+
+    &:active {
+        letter-spacing: 3px;
+        background-color: hsl(261deg 80% 48%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+        transform: translateY(10px);
+        transition: 100ms;
+       }
+}
+
+
+.scroll-to-top-btn {
+    --top-button-width-height: 1.5em;
+    position: fixed;
+    width: var(--top-button-width-height);
+    height: var(--top-button-width-height);
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(119, 7, 113, 0.444);
+    color: var(--dark-violet-color);
+    border: 1px solid var(--dark-violet-color);
+    border-radius: 50%;
+    font-size: 1em;
+    cursor: pointer;
+    display: none;
+
+    &:hover {
+        background-color: hsl(261deg 80% 48%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+    }
+
+    &:active {
+        letter-spacing: 3px;
+        background-color: hsl(261deg 80% 48%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+        transform: translateY(10px);
+        transition: 100ms;
+       }
+}
+
+.my-profile {
+    background-color: var(--dark-violet-color);
+    margin: 30px 10px 30px 10px;
+    border-radius: 24px;
+}
+
+.my-projects {
+    background-color: var(--dark-violet-color);
+    margin: 30px 10px 30px 10px;
+    border-radius: 24px;
+}
+
+.my-contacts {
+    background-color: var(--dark-violet-color);
+    margin: 30px 10px 30px 10px;
+    border-radius: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: var(--light-violet-color);
+}
+
+@keyframes BGtoTheTop {
+    to {
+        top: 0; /* Move to the top */
+    }
+}
+
+@keyframes blinkingBorder {
+    0% {
+        -webkit-text-stroke: 3px var(--dark-violet-color);
+    }
+    50% {
+        -webkit-text-stroke: 3px #ffffff00;
+    }
+    100% {
+        -webkit-text-stroke: 3px var(--dark-violet-color);
+    }
+}
